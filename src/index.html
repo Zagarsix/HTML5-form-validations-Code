@@ -1,29 +1,115 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
-  </head>
-  <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML5 Form Validations</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <div class="card w-75 my-5 m-auto">
+    <div class="card-header fs-2 fw-bolder">Payment form example</div>
+    <div class="alert alert-danger p-2 m-4 fs-5" role="alert" id="alertDanger">
     </div>
-  </body>
+    <div class="card-body fs-5">
+      <form id="fillingForm" class="row g-3">
+        <div class="col-md-5">
+          <label for="card" class="form-label">Card #</label>
+          <input type="text" class="form-control fs-5" id="card" placeholder="XXXXXXXXXXXXXXXX" />
+        </div>
+        <div class="col-md-3">
+          <label for="CVC" class="form-label">CVC#</label>
+          <input type="number" class="form-control fs-5" id="CVC" placeholder="0000" />
+        </div>
+        <div class="col-md-4">
+          <label for="amount" class="form-label">Amount</label>
+          <div class="d-flex">
+            <i class="fa-solid fa-dollar-sign"></i>
+            <input type="text" class="form-control fs-5" id="amount" placeholder="Amount" />
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="firstName" class="form-label">First Name</label>
+          <input type="text" class="form-control" aria-label="firstName" id="firstName" />
+        </div>
+        <div class="col-md-6">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" aria-label="lastName" id="lastName" />
+        </div>
+        <div class="col-md-6">
+          <label for="city" class="form-label">City</label>
+          <input type="text" class="form-control" id="city" />
+        </div>
+        <div class="col-md-3">
+          <label for="state" class="form-label">State</label>
+          <select id="state" class="form-select">
+            <option selected></option>
+            <option value="Santiago">Santiago</option>
+            <option value="Caracas">Caracas</option>
+            <option value="New York">New York</option>
+            <option value="Buenos Aires">Buenos Aires</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <label for="postalCode" class="form-label">Postal Code</label>
+          <input type="text" class="form-control" id="postalCode" />
+        </div>
+        <div class="col-md-6">
+          <label class="form-check-label" for="gridCheck"> We accept: </label>
+          <div class="form-check my-2">
+            <div class="d-inline rounded p-1 w-50 bg-secondary opacity-75">
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                  value="option1" />
+                <label class="form-check-label" for="inlineRadio1"><i class="fa-brands fa-cc-mastercard"></i></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
+                  value="option2" />
+                <label class="form-check-label" for="inlineRadio2"><i class="fa-brands fa-cc-visa"></i></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                  value="option3" />
+                <label class="form-check-label" for="inlineRadio3"><i class="fa-brands fa-cc-diners-club"></i></label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
+                  value="option4" />
+                <label class="form-check-label" for="inlineRadio3"><i class="fa-brands fa-cc-amex"></i></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label class="form-check-label" for="gridCheck"> Message: </label>
+          <textarea name="" id="tArea" cols="30" rows="5" class="form-control my-2"></textarea>
+          <span class="text-muted fs-6">Add any notes here.</span>
+        </div>
+      </form>
+    </div>
+
+    <div class="card-footer text-muted d-flex justify-content-end">
+      <button type="submit" class="btn btn-secondary mx-1 fs-5">
+        Cancel
+      </button>
+      <button type="submit" id="submit" class="btn btn-primary mx-1 fs-5">
+        Send
+      </button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./app.js"></script>
+</body>
+
 </html>
